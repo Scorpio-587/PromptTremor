@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local benchmark reports
+results/model_runs/
+results/latest_run.json
+
+# Temporary smoke test
+test_model.py
+

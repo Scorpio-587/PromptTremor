@@ -13,6 +13,7 @@ MODEL = os.getenv("PROMPTTREMOR_MODEL", "gemma4:e4b")
 BASE_DIR = Path(__file__).resolve().parent
 BENCHMARK_FILE = BASE_DIR / "benchmark.json"
 RESULTS_FILE = BASE_DIR / "results" / "latest_run.json"
+MODEL_RUNS_DIR = BASE_DIR / "results" / "model_runs"
 
 
 def normalize(text):
@@ -129,6 +130,18 @@ def main():
         json.dumps(report, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+
+    MODEL_RUNS_DIR.mkdir(parents=True, exist_ok=True)
+
+    model_slug = re.sub(r"[^A-Za-z0-9._-]+", "_", MODEL)
+    model_report_file = MODEL_RUNS_DIR / f"{model_slug}.json"
+
+    model_report_file.write_text(
+    json.dumps(report, indent=2, ensure_ascii=False),
+    encoding="utf-8",
+    )
+
+    print(f"Model-specific report saved to: {model_report_file}")
 
     print("\n=== PromptTremor Summary ===")
     print(f"Model: {MODEL}")
