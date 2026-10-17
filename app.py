@@ -142,6 +142,20 @@ category_stats = (
 
 st.bar_chart(category_stats)
 
+st.subheader("Accuracy by perturbation type")
+
+if "variant_type" in df.columns:
+    variant_stats = (
+        df.groupby("variant_type")["correct"]
+        .mean()
+        .mul(100)
+        .rename("Accuracy (%)")
+    )
+
+    st.bar_chart(variant_stats)
+else:
+    st.info("This report does not contain perturbation labels.")
+
 st.divider()
 st.subheader("Inspect individual responses")
 
@@ -164,6 +178,7 @@ columns_to_show = [
     "task_id",
     "category",
     "variant",
+    "variant_type",
     "expected",
     "response",
     "correct",
