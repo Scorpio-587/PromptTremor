@@ -1,0 +1,44 @@
+
+[
+  {
+    "id": "math_01",
+    "category": "arithmetic",
+    "expected": "42",
+    "prompts": [
+      "Calculate 14 + 28. Reply with only the number.",
+      "What is the sum of twenty-eight and fourteen? Return only the numeric answer.",
+      "Add 14 to 28. Do not explain; output only the result."
+    ]
+  },
+  {
+    "id": "capital_01",
+    "category": "general knowledge",
+    "expected": "Paris",
+    "prompts": [
+      "What is the capital of France? Reply with only the city name.",
+      "Name France's capital city. Give only the city name.",
+      "Which city serves as the capital of France? Output only its name."
+    ]
+  },
+  {
+    "id": "extract_01",
+    "category": "information extraction",
+    "expected": "Thursday",
+    "prompts": [
+      "The meeting with Maya is on Thursday at 3 PM. What day is the meeting? Reply with only the day.",
+      "Maya's meeting is scheduled for Thursday at 3 PM. Identify the day. Give only the day.",
+      "A meeting with Maya takes place at 3 PM on Thursday. Which weekday is it? Output only the day."
+    ]
+  },
+  {
+    "id": "logic_01",
+    "category": "reasoning",
+    "expected": "YES",
+    "prompts": [
+      "A week has seven days. Does a week have more than five days? Reply YES or NO only.",
+      "Given that one week contains seven days, is its length greater than five days? Answer YES or NO only.",
+      "If a week consists of seven days, is seven greater than five? Output YES or NO only."
+    ]
+  }
+]
+
